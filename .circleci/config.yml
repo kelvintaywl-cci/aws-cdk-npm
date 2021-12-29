@@ -6,14 +6,13 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:14.10.1
+      - image: cimg/node:16.13
     steps:
       - run:
           name: Install AWS CDK via NPM
           command: |
-            npm i -g aws-cdk
+            npm i aws-cdk
       - run:
           name: Verify CDK installed
           command: |
-            which cdk
-            cdk --help
+            npx cdk --help
